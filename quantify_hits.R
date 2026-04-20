@@ -1,6 +1,6 @@
 library(tidyverse)
 library(tools)
-source("Ji_nikon_importfunction.R")
+source("96well_Ji_nikon_importfunction.R")
 source("vjunctur_functions_v1.R")
 
 library(tidyverse)
@@ -13,6 +13,7 @@ library(progressr)
 library(doFuture)
 library(patchwork)
 library(gglm)
+
 
 
 # each antibody gets its own. Try making map like how I did with c5 and zono previously
@@ -175,5 +176,9 @@ quant_bcat = segment_and_quant_p_noactin(
   bcat, nuclear_disk =  1 , tophat_area =  10 , tophat_threshold =  0.002 ,min_area =  20 , nuclear_area =  20 , nuclear_offset =  0.001 
 )
 
+
+
 ggplot(quant_bcat, aes(x=sample, y=contiguous_fluorescence, group=sample))+
   geom_bar(stat="identity")
+
+
