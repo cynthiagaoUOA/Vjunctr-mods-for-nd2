@@ -23,10 +23,11 @@ py_install(c("numpy", "nd2", "tifffile", "xarray", "pandas"))
 # STEP 3:
 # You will need a copy of the batchnd2filefunction.py file in your working directory. This is the python script. The package reticulate allows you to source the python script from within Rstudio, without having to use another software
 
-library(reticulate)
-use_virtualenv("r-reticulate", required = TRUE) #activate the virtual env
 
-source_python("batchnd2filefunction.py")
+
+# source_python("batchnd2filefunction.py") vjunctr plus MIPS
+source_python("nd2stacktoMIPs")
+
 
 # Go to file explorer to the folder where your data is. Copy as path into first argument, changing backslashes to forward slashes
 nd2_to_MIPtif("path to folder where original data is",

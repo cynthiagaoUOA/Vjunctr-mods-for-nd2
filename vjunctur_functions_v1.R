@@ -825,6 +825,8 @@ segment_and_quant_p_noactin = function(file_directory, nuclear_disk = 10, tophat
   
   
   library(doFuture)
+  
+  
   registerDoFuture()
   plan("multisession")
   
